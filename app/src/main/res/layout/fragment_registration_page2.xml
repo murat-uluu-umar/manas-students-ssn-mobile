@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="registrationViewModel"
+            type="kg.manas.ssn.view.registration.viewmodel.RegistrationViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.registration.RegistrationFragmentPage2">
+
+        <ImageButton
+            android:id="@+id/back_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:contentDescription="@string/back"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintLeft_toRightOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/guideline3" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:addStatesFromChildren="false"
+            android:isScrollContainer="true"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/guideline9">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_username_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Логин"
+                    android:textColor="#5050CB"
+                    android:textColorHint="#5050CB"
+                    app:layout_constraintBottom_toTopOf="@+id/reg_email_text_input">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/reg_username_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:text="@={registrationViewModel.userName}"
+
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_email_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_username_text_input"
+                    android:hint="Email"
+                    android:textColorHint="#5050CB"
+                    app:errorEnabled="true"
+                    app:layout_constraintVertical_bias="0.20">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/reg_email_edit_tex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:text="@={registrationViewModel.email}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Switch
+                    android:id="@+id/useNewPasswordCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/reg_email_text_input"
+                    android:layout_alignParentEnd="true"
+                    android:showText="false"
+                    android:textColor="@color/purple"
+                    android:textOff="@string/new_password_use"
+                    android:textOn="@string/hint_passwordObis"
+                    tools:checked="true" />
+
+                <LinearLayout
+                    android:id="@+id/support_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/useNewPasswordCheckBox"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/reg_password1_text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Новый пароль"
+                        android:textColor="#5050CB"
+                        android:textColorHint="#5050CB">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/reg_password1_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:text="@={registrationViewModel.password}" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/reg_password2_text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Потвердить пароль"
+                        android:textColorHint="#5050CB"
+
+
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/reg_password2_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:text="@={registrationViewModel.confirmPassword}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/reg_email_text_input"
+                    android:text="@string/hint_passwordObis"
+                    android:textColor="@color/purple"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/id_nextbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/purple_button_background"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:text="@string/bt_next"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintRight_toRightOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/guideline8"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <ImageView
+            android:id="@+id/id_status2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_statusregpage2"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintLeft_toLeftOf="@id/guideline"
+            app:layout_constraintRight_toRightOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/id_nextbt"
+            app:layout_constraintVertical_bias="0.39" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

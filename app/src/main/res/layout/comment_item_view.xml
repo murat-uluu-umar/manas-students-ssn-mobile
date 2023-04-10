@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/replyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentContentText"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:text="@string/reply" />
+
+    <TextView
+        android:id="@+id/showRepliesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentContentText"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/replyButton"/>
+
+    <TextView
+        android:id="@+id/commentContentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentOwnerPhoto"
+        android:layout_toEndOf="@id/commentOwnerPhoto"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:layout_marginStart="10dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/commentOwnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/commentOwnerPhoto"
+        android:layout_alignBottom="@id/commentOwnerPhoto"
+        android:layout_alignTop="@id/commentOwnerPhoto"
+        android:textStyle="bold" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/commentOwnerPhoto"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:padding="5dp"
+        android:src="@drawable/user_photo_icon"
+        app:civ_border_color="@color/purple"
+        app:civ_border_width="1dp" />
+
+</RelativeLayout>

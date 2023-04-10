@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/post_background"
+    android:layout_marginBottom="10dp"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/postOwnerPhoto"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:layout_margin="10dp"
+            android:src="@drawable/user_photo_icon"
+            app:civ_border_color="@color/purple"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/postOwnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_toEndOf="@+id/postOwnerPhoto"
+            android:paddingTop="5dp"
+
+            android:text="Jenny Allison"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/posOwnerLastSeenDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postOwnerName"
+            android:layout_alignStart="@+id/postOwnerName"
+            android:text="last seen time" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_threehorizontaldot" />
+    </RelativeLayout>
+
+    <com.borjabravo.readmoretextview.ReadMoreTextView
+        android:id="@+id/postContentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Таким образом постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации. Разнообразный и богатый опыт начало повседневной работы по формированию позиции требуют от нас анализа форм развития. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач."
+        android:textColor="#000000"
+        android:textStyle="normal"
+        app:colorClickableText="@color/purple"
+        app:trimCollapsedText="@string/read_more"
+        app:trimExpandedText="@string/read_less"
+        app:trimLength="85"
+        app:trimMode="trimModeLength" />
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/postImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        app:iss_auto_cycle="false"
+        app:iss_selected_dot="@drawable/transparent"
+        app:iss_unselected_dot="@drawable/transparent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/likeLogo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_facebook_like_button" />
+
+        <TextView
+            android:id="@+id/likesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/likeLogo"
+            android:layout_margin="10dp"
+            android:layout_toEndOf="@id/likeLogo"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/commentsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/commentsString"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@id/commentsString"
+            android:text="13"
+            android:textColor="#3D66F8"
+
+            />
+
+        <TextView
+            android:id="@+id/commentsString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/likeLogo"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:text="@string/comments"
+            android:textColor="#3D66F8" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#C4C4C4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/likeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_unpressed_like_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toEndOf="@id/likeButton"
+            android:text="@string/like" />
+
+        <LinearLayout
+            android:id="@+id/commentArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:clickable="true">
+
+            <ImageButton
+                android:id="@+id/commentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_comment_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/comments" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

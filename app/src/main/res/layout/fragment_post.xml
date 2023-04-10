@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="kg.manas.ssn.view.post.PostCreateViewModel" />
+
+        <variable
+            name="viewModel1"
+            type="kg.manas.ssn.view.profile.viewmodel.ProfileDataViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D2DCFB"
+        android:paddingBottom="@dimen/fragment_vertical_margin"
+        tools:context=".view.home.HomeFragment"
+        android:orientation="vertical"
+        android:weightSum="10">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:civ_border_color="@color/purple"
+                app:civ_border_width="1dp"
+                android:id="@+id/myPhoto"
+                android:layout_width="?actionBarSize"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:src="@drawable/user_photo_icon"/>
+
+            <TextView
+                android:id="@+id/myNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:text="@={viewModel1.personalInformation.fullname}"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@id/myPhoto"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp"/>
+            <Button
+                android:id="@+id/postButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/purple_button_background"
+                android:text="POST"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DD000000"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="40dp"
+           >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/text_symbol"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_toStartOf="@id/remainingTextCounter"/>
+            <TextView
+                android:id="@+id/remainingTextCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:text="500"
+                android:layout_margin="5dp"/>
+
+        </RelativeLayout>
+        <EditText
+            android:maxLength="500"
+            android:id="@+id/contentText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="#000000"
+            android:hint="Enter your text..."
+            android:padding="12dp"
+            android:layout_weight="2.5"
+            android:layout_margin="10dp"
+            android:gravity="top|start"
+            android:background="#FFFFFF"
+            android:text="@={viewModel.contentText}"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7.7">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_gallery_symbol"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:text="Media"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:clickable="true"
+                    android:id="@+id/newPostImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/image_selector_background"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>

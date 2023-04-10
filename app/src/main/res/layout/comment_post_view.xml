@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:layout_margin="10dp"
+        android:adjustViewBounds="true"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/postOwnerPhoto"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/user_photo_icon"
+            app:civ_border_color="@color/purple"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:id="@+id/postOwnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="0dp"
+
+            android:layout_toEndOf="@+id/postOwnerPhoto"
+            android:paddingTop="5dp"
+
+            android:text="Jenny Allison"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/postId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+
+            android:id="@+id/postContentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postOwnerName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="55dp"
+
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="adfasdfjas;lfk fjdsa lkfjd fjdskal;j fkds
+        fjdsal;fjdsa f jds afj dsa;f dsjaa; fjdsaa f dslk;f dsa
+        fds af dsalak;f kjdas fadsl; f ldsla;f dsa dfsad f dsaa"
+            android:textColor="#000000"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/likeLogo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_facebook_like_button"/>
+
+        <TextView
+            android:id="@+id/likesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/likeLogo"
+            android:layout_toEndOf="@id/likeLogo"
+            android:layout_margin="10dp"
+            android:text="5" />
+        <TextView
+            android:id="@+id/commentsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/commentsString"
+            android:layout_alignBaseline="@id/commentsString"
+            android:text = "13"
+            android:textColor="#3D66F8"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/commentsString"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/likeLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/comments"
+            android:textColor="#3D66F8"
+            />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#C4C4C4"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

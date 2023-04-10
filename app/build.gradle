@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "kg.manas.ssn"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 3
+        versionName "1.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'ssn_key_alias'
+            keyPassword 'FoxYH8dc'
+            storePassword 'FoxYH8dc'
+            storeFile file("key/ssn_key.jks")
+        }
+
+        debug {
+            keyAlias 'ssn_key_alias'
+            keyPassword 'FoxYH8dc'
+            storePassword 'FoxYH8dc'
+            storeFile file("key/ssn_key.jks")
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.google.android.material:material:1.4.0-rc01'
+    //LOMBOK! DO NOT DELETE LOMBOK!!!!
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    // ButterKnife, Picasso, PlayServices and other...
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //OkHttp3 implementation
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //Other
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'joda-time:joda-time:2.10.10'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    // Dexter runtime permissions
+    implementation 'com.karumi:dexter:6.2.2'
+    // circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+    //material io
+    api 'com.google.android.material:material:1.4.0-rc01'
+    //textView show more
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //slider
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+}

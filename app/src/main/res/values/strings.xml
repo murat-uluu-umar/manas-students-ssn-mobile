@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="app_name">Students Social Network</string>
+    <string name="app_short_name">Students SN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Authentication Page  -->
+    <string name="hint_username">Студентческий номер/Логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="check_rememberme">Запомни меня</string>
+    <string name="forgot_password"><u>Забыли пароль?</u></string>
+    <string name="bt_login">ВОЙТИ</string>
+    <string name="create_account"><u>Создать аккаунт</u></string>
+
+    <!--    Registration Page  -->
+    <string name="stNumUserNEmptyErr"> Cтуденческий номер или Логин не должен быть пустым</string>
+    <string name="stNumUserNNotMatchErr"> Cтуденческий номер и пароль не совпадают</string>
+    <string name="bt_next">ДАЛЕЕ</string>
+    <string-array name="password_choose_option">
+        <item><u>Использовать пароль obis.manas.edu.kg</u></item>
+        <item><u>Создать новый пароль</u></item>
+    </string-array>
+    <string-array name="day_choose_option">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+    <string name="hint_studentNum">Студенческий номер</string>
+    <string name="hint_passwordObis">Пароль (obis.manas.edu.kg)</string>
+    <string name="choosePhotoItem">Выберите фото профиля</string>
+    <string name="uploadPhoto"><u>Загрузить фото</u></string>
+    <string name="fromPhone">с устройства</string>
+    <string name="skip">Завершить</string>
+
+    <!--    Forgot Password Page  -->
+    <string name="inputYourEmail">"Введите свой зарегистрированный email адресс"</string>
+    <string name="weSendVerifyingCode">Мы отправим верификационный код на вашу почту</string>
+    <string name="bt_send">Отправить</string>
+
+    <!--    Errors  -->
+    <string name="stNumPassInvalid">Студенческий номер и пароль не совпадают или не существуют</string>
+    <string name="short_pass_err">Пароль должен быть длиннее 8 символов</string>
+    <string name="username_empty_err"> Логин должен быть не пустым</string>
+    <string name="inValidStudentNumber">Студенческий номер неправильный</string>
+    <string name="studenNumEmptyErr">Студенческий номер не должен быть пустым</string>
+    <string name="didntMatch">Не совпадают</string>
+    <string name="inValidEmail">Неправильный Email адрес</string>
+    <string name="inValidUserName">Неправильное Имя пользователя</string>
+    <string name="usernameDigit">Имя пользователя не может начинать с цифры</string>
+
+    <!--    Profile Page  -->
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="tab_text_1">Personal Information</string>
+    <string name="tab_text_2">Lessons &amp; Marks</string>
+    <string name="tab_text_3">Posts</string>
+    <string name="back">back</string>
+    <string name="btn_use">использовать</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="newPost">New post</string>
+    <string name="timeTable">Time Table</string>
+    <string name="new_password_use">Use new password</string>
+
+    <string name="comments">Comments</string>
+    <string name="like">Like</string>
+    <string name="read_less">  show less</string>
+
+    <string name="bilgisayar_muhendisligi">Bilgisayar Muhendisligi</string>
+    <string name="code">CODE</string>
+    <string name="title">TITLE</string>
+    <string name="student_number">STUDENT NUMBER</string>
+    <string name="name_surname">NAME SURNAME</string>
+    <string name="email">EMAIL</string>
+    <string name="birthday">BIRTHDAY</string>
+    <string name="faculty">FACULTY</string>
+
+    <string name="average_mark">AVERAGE MARK</string>
+    <string name="add">add</string>
+    <string name="comment">Comment text</string>
+    <string name="reply">reply</string>
+
+</resources>

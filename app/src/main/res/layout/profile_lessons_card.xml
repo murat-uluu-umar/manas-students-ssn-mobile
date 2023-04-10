@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/codeofLesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:text="BIL-302"
+            android:textColor="#4A3E94"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/nameofLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@+id/averageMarkLesson"
+            android:layout_toEndOf="@id/codeofLesson"
+            android:text="İŞLETİM SİSTEMLERİNE GİRİŞ"
+            android:textColor="#4A3E70"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/averageMarkLesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="AAA"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentEnd="true"/>
+</RelativeLayout>
